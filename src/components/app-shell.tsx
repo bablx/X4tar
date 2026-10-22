@@ -14,9 +14,9 @@ export function AppShell({ children }: { children: ReactNode }) {
       {/* Mobile topbar */}
       <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-border bg-background/90 px-4 py-3 backdrop-blur-md md:hidden">
         <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="X4TAR" width={28} height={28} className="rounded-md" />
+          <Image src="/logo.png" alt="Pasut" width={28} height={28} className="rounded-md" />
           <span className="font-bold text-foreground">
-            X4<span className="text-accent">TAR</span>
+            Pas<span className="text-accent">ut</span>
           </span>
         </div>
         <button onClick={() => setOpen(true)} aria-label="Open menu" className="text-foreground">

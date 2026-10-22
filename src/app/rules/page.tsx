@@ -4,15 +4,15 @@ import { FAQ } from "@/lib/mock-data";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SectionHeading } from "@/components/section-heading";
 
-export const metadata: Metadata = { title: "Rules & FAQ | X4TAR" };
+export const metadata: Metadata = { title: "Rules & FAQ | Pasut" };
 
 const RULES = [
-  "You must be signed up to Stake under the X4TAR affiliate code during the race period to qualify.",
+  "You must be signed up to Stake under the Pasut affiliate code during the race period to qualify.",
   "Rankings are based on total wager across eligible games during the race window.",
   "Stake Originals and slots count at 100% toward wager; live casino and sports may count at a reduced rate.",
   "Winners must connect Discord and Kick on the Community page to verify identity before payout.",
   "Prizes are distributed within 72 hours of the race ending. Unclaimed prizes after 14 days are forfeited.",
-  "X4TAR reserves the right to disqualify suspected bonus abuse, multi-accounting, or wager bots.",
+  "Pasut reserves the right to disqualify suspected bonus abuse, multi-accounting, or wager bots.",
 ];
 
 const RULES_BASE_DELAY = 400;

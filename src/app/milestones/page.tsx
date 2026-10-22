@@ -6,7 +6,7 @@ import { TIER_THEME } from "@/lib/milestone-theme";
 import { SectionHeading } from "@/components/section-heading";
 import { formatCurrency } from "@/lib/format";
 
-export const metadata: Metadata = { title: "Milestones | X4TAR" };
+export const metadata: Metadata = { title: "Milestones | Pasut" };
 
 const BASE_DELAY = 400;
 const STAGGER = 200;
@@ -18,7 +18,7 @@ export default function MilestonesPage() {
         <SectionHeading
           eyebrow="Challenges"
           title="Milestones"
-          description="Lifetime wager challenges under the X4TAR code. Clear a tier, bank the reward — stacks on top of every race prize."
+          description="Lifetime wager challenges under the Pasut code. Clear a tier, bank the reward — stacks on top of every race prize."
         />
       </div>
 

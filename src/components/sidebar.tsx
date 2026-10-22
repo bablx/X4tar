@@ -144,10 +144,10 @@ export function Sidebar() {
   return (
     <aside className="flex h-full w-60 shrink-0 flex-col border-r border-border bg-surface">
       <div className="flex items-center gap-2 border-b border-border px-4 py-4">
-        <Image src="/logo.png" alt="X4TAR" width={32} height={32} className="rounded-md" />
+        <Image src="/logo.png" alt="Pasut" width={32} height={32} className="rounded-md" />
         <div>
           <p className="text-sm font-bold leading-tight text-foreground">
-            X4<span className="text-accent">TAR</span>
+            Pas<span className="text-accent">ut</span>
           </p>
           <p className="text-[10px] uppercase tracking-wider text-muted">Stake Wager Races</p>
         </div>

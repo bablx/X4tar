@@ -39,7 +39,7 @@ function makeEntries() {
 
 export const MOCK_LEADERBOARD: LeaderboardData = {
   raceId: "mock-race-001",
-  title: "X4TAR Monthly Wager Race",
+  title: "Pasut Monthly Wager Race",
   prizePool: 6500,
   currency: "USD",
   startsAt: "2026-10-01T00:00:00.000Z",
@@ -53,10 +53,10 @@ export const BONUSES: Bonus[] = [
     id: "stake",
     title: "Stake Deposit Bonus + Rakeback",
     description:
-      "Sign up with code X4 for a boosted first deposit bonus plus lifetime rakeback on every wager — credited daily.",
-    code: "X4",
+      "Sign up with code Pasut for a boosted first deposit bonus plus lifetime rakeback on every wager — credited daily.",
+    code: "Pasut",
     tag: "deposit",
-    href: "https://stake.com/?offer=x4",
+    href: "https://stake.com/?offer=pasut",
   },
 ];
 
@@ -64,7 +64,7 @@ export const FAQ: FaqItem[] = [
   {
     question: "How do I join the leaderboard?",
     answer:
-      "Sign up on Stake using code X4TAR (or switch your existing affiliate code to X4TAR in account settings). Your wager is tracked automatically — no registration needed.",
+      "Sign up on Stake using code Pasut (or switch your existing affiliate code to Pasut in account settings). Your wager is tracked automatically — no registration needed.",
   },
   {
     question: "How often does the leaderboard update?",

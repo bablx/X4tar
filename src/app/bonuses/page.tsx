@@ -3,7 +3,7 @@ import { BONUSES } from "@/lib/mock-data";
 import { BonusCard } from "@/components/bonus-card";
 import { SectionHeading } from "@/components/section-heading";
 
-export const metadata: Metadata = { title: "Bonuses | X4TAR" };
+export const metadata: Metadata = { title: "Bonuses | Pasut" };
 
 export default function BonusesPage() {
   return (
@@ -12,7 +12,7 @@ export default function BonusesPage() {
         <SectionHeading
           eyebrow="Rewards"
           title="Bonuses & Perks"
-          description="Everything you can claim as part of the X4TAR community, stacked on top of the leaderboard prizes."
+          description="Everything you can claim as part of the Pasut community, stacked on top of the leaderboard prizes."
         />
       </div>
       {BONUSES.map((bonus, i) => (

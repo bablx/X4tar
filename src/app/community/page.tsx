@@ -63,7 +63,7 @@ export default function CommunityPage() {
           <span className="shine-sweep" style={{ animationDelay: "1500ms" }} />
         </a>
         <a
-          href="https://kick.com/x4tar"
+          href="https://kick.com/pasut"
           target="_blank"
           rel="noreferrer"
           className="group stamp-in relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border card-surface p-6 transition hover:-translate-y-1 hover:border-accent"

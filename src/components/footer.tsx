@@ -9,13 +9,13 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-start md:justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <Image src="/logo.png" alt="X4TAR" width={32} height={32} className="rounded-md" />
+            <Image src="/logo.png" alt="Pasut" width={32} height={32} className="rounded-md" />
             <span className="text-lg font-bold">
-              X4<span className="text-accent">TAR</span>
+              Pas<span className="text-accent">ut</span>
             </span>
           </div>
           <p className="mt-3 max-w-sm text-sm text-muted">
-            Wager races, bonuses, and community rewards for the X4TAR crew on Stake.
+            Wager races, bonuses, and community rewards for the Pasut crew on Stake.
           </p>
         </div>
 
@@ -34,8 +34,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border px-4 py-4 text-center text-xs text-muted sm:px-6">
-        18+ Please gamble responsibly. X4TAR is an independent affiliate/community site and is not operated by Stake, Discord, or Kick.
-        © {CURRENT_YEAR} X4TAR.
+        18+ Please gamble responsibly. Pasut is an independent affiliate/community site and is not operated by Stake, Discord, or Kick.
+        © {CURRENT_YEAR} Pasut.
       </div>
     </footer>
   );

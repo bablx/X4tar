@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "X4TAR | Stake Leaderboard & Bonuses",
+  title: "Pasut | Stake Leaderboard & Bonuses",
   description:
-    "X4TAR's official Stake wager race leaderboard, exclusive bonuses, and community rewards.",
+    "Pasut's official Stake wager race leaderboard, exclusive bonuses, and community rewards.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

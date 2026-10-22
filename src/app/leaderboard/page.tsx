@@ -5,7 +5,7 @@ import { RankList } from "@/components/rank-list";
 import { SectionHeading } from "@/components/section-heading";
 import { Countdown } from "@/components/countdown";
 
-export const metadata: Metadata = { title: "Leaderboard | X4TAR" };
+export const metadata: Metadata = { title: "Leaderboard | Pasut" };
 
 export default async function LeaderboardPage() {
   const leaderboard = await fetchLeaderboard();

@@ -9,6 +9,7 @@ import { CountUp } from "@/components/count-up";
 import { BonusCard } from "@/components/bonus-card";
 import { SectionHeading } from "@/components/section-heading";
 import { YouTubeIcon } from "@/components/youtube-icon";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 const PARTICLES = [
   { top: "20%", left: "15%", delay: "0s", size: 6 },
@@ -49,20 +50,20 @@ export default async function Home() {
           className="hero-pop glow-text mt-3 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
           style={{ animationDelay: "300ms" }}
         >
-          X4<span className="text-accent">TAR</span>
+          Pas<span className="text-accent">ut</span>
         </h1>
         <p className="rise-in mt-4 max-w-xl text-base text-muted sm:text-lg" style={{ animationDelay: "1300ms" }}>
-          Wager races, exclusive bonuses, and community rewards for every player riding with X4TAR on Stake.
+          Wager races, exclusive bonuses, and community rewards for every player riding with Pasut on Stake.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://stake.com/?offer=x4"
+            href="https://stake.com/?offer=pasut"
             target="_blank"
             rel="noreferrer"
             className="cta-flip-pulse rounded-md bg-accent px-6 py-3 text-sm font-bold text-black transition hover:opacity-90"
           >
-            Play on Stake — Code X4
+            Play on Stake — Code Pasut
           </a>
           <Link
             href="/leaderboard"
@@ -76,158 +77,181 @@ export default async function Home() {
 
       {/* Leaderboard preview */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading
-            eyebrow="Live Wager Race"
-            title={leaderboard.title}
-            description={`Top wagerers split a ${formatCurrency(leaderboard.prizePool, leaderboard.currency)} prize pool.`}
-          />
-          <Link
-            href="/leaderboard"
-            className="mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-          >
-            Full leaderboard <ArrowRight size={14} />
-          </Link>
-        </div>
-
-        <div className="overflow-hidden rounded-2xl border border-border card-surface">
-          {topThree.map((entry, i) => (
-            <div
-              key={entry.rank}
-              className={clsx(
-                "relative flex items-center gap-4 overflow-hidden px-5 py-4",
-                i % 2 === 0 ? "row-pop-left" : "row-pop-right",
-                i !== topThree.length - 1 && "border-b border-border",
-              )}
-              style={{ animationDelay: `${300 + i * 180}ms` }}
-            >
-              <span
-                className={clsx(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold",
-                  i === 0 ? "bg-gold text-black" : "bg-surface-2 text-muted",
-                )}
-              >
-                {entry.rank}
-              </span>
-              <span className="flex-1 truncate font-semibold text-foreground">{entry.username}</span>
-              <span className="text-sm text-muted">{formatCurrency(entry.wagered, leaderboard.currency)}</span>
-              <span className="w-20 text-right text-sm font-bold text-accent">
-                {formatCurrency(entry.prize, leaderboard.currency)}
-              </span>
+        <ScrollReveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="anim-heading">
+              <SectionHeading
+                eyebrow="Live Wager Race"
+                title={leaderboard.title}
+                description={`Top wagerers split a ${formatCurrency(leaderboard.prizePool, leaderboard.currency)} prize pool.`}
+              />
             </div>
-          ))}
-        </div>
+            <Link
+              href="/leaderboard"
+              className="rise-in mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
+              style={{ animationDelay: "150ms" }}
+            >
+              Full leaderboard <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-border card-surface">
+            {topThree.map((entry, i) => (
+              <div
+                key={entry.rank}
+                className={clsx(
+                  "relative flex items-center gap-4 overflow-hidden px-5 py-4",
+                  i % 2 === 0 ? "row-pop-left" : "row-pop-right",
+                  i !== topThree.length - 1 && "border-b border-border",
+                )}
+                style={{ animationDelay: `${300 + i * 180}ms` }}
+              >
+                <span
+                  className={clsx(
+                    "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold",
+                    i === 0 ? "bg-gold text-black" : "bg-surface-2 text-muted",
+                  )}
+                >
+                  {entry.rank}
+                </span>
+                <span className="flex-1 truncate font-semibold text-foreground">{entry.username}</span>
+                <span className="text-sm text-muted">{formatCurrency(entry.wagered, leaderboard.currency)}</span>
+                <span className="w-20 text-right text-sm font-bold text-accent">
+                  {formatCurrency(entry.prize, leaderboard.currency)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Bonuses preview */}
       <section className="border-t border-border bg-surface/30">
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading
-              eyebrow="Rewards"
-              title="Bonuses & Perks"
-              description="Exclusive deposit bonuses and rakeback on top of every race prize."
-            />
-            <Link
-              href="/bonuses"
-              className="mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-            >
-              All bonuses <ArrowRight size={14} />
-            </Link>
-          </div>
-          {previewBonuses.map((bonus, i) => (
-            <BonusCard key={bonus.id} bonus={bonus} delayMs={300 + i * 220} fromSide="left" />
-          ))}
+          <ScrollReveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="anim-heading">
+                <SectionHeading
+                  eyebrow="Rewards"
+                  title="Bonuses & Perks"
+                  description="Exclusive deposit bonuses and rakeback on top of every race prize."
+                />
+              </div>
+              <Link
+                href="/bonuses"
+                className="rise-in mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
+                style={{ animationDelay: "150ms" }}
+              >
+                All bonuses <ArrowRight size={14} />
+              </Link>
+            </div>
+            {previewBonuses.map((bonus, i) => (
+              <BonusCard key={bonus.id} bonus={bonus} delayMs={300 + i * 220} fromSide="left" />
+            ))}
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Milestones preview */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading
-            eyebrow="Challenges"
-            title="Milestones"
-            description="Lifetime wager tiers that pay out on top of race prizes."
-          />
-          <Link
-            href="/milestones"
-            className="mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-          >
-            All milestones <ArrowRight size={14} />
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {previewMilestones.map((milestone, i) => {
-            const theme = TIER_THEME[i % TIER_THEME.length];
-            return (
-              <div
-                key={milestone.tier}
-                className={clsx(
-                  "flip-in-left relative flex flex-col gap-3 overflow-hidden rounded-xl border card-surface p-5",
-                  theme.border,
-                )}
-                style={{ animationDelay: `${300 + i * 200}ms` }}
-              >
-                <span
-                  className="badge-bounce-in flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ animationDelay: `${300 + i * 200 + 300}ms` }}
+        <ScrollReveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="anim-heading">
+              <SectionHeading
+                eyebrow="Challenges"
+                title="Milestones"
+                description="Lifetime wager tiers that pay out on top of race prizes."
+              />
+            </div>
+            <Link
+              href="/milestones"
+              className="rise-in mb-8 flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
+              style={{ animationDelay: "150ms" }}
+            >
+              All milestones <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {previewMilestones.map((milestone, i) => {
+              const theme = TIER_THEME[i % TIER_THEME.length];
+              return (
+                <div
+                  key={milestone.tier}
+                  className={clsx(
+                    "flip-in-left relative flex flex-col gap-3 overflow-hidden rounded-xl border card-surface p-5",
+                    theme.border,
+                  )}
+                  style={{ animationDelay: `${300 + i * 200}ms` }}
                 >
-                  <span className={clsx("flex h-full w-full items-center justify-center rounded-xl", theme.icon)}>
-                    <Gem size={18} />
+                  <span
+                    className="badge-bounce-in flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ animationDelay: `${300 + i * 200 + 300}ms` }}
+                  >
+                    <span className={clsx("flex h-full w-full items-center justify-center rounded-xl", theme.icon)}>
+                      <Gem size={18} />
+                    </span>
                   </span>
-                </span>
-                <div>
-                  <p className={clsx("text-xs font-extrabold uppercase tracking-wider", theme.label)}>
-                    {theme.name}
-                  </p>
-                  <p className="font-bold text-foreground">{formatCurrency(milestone.wagered)}</p>
+                  <div>
+                    <p className={clsx("text-xs font-extrabold uppercase tracking-wider", theme.label)}>
+                      {theme.name}
+                    </p>
+                    <p className="font-bold text-foreground">{formatCurrency(milestone.wagered)}</p>
+                  </div>
+                  <div className="mt-auto flex items-center justify-between border-t border-border pt-3">
+                    <span className="text-xs text-muted">Reward</span>
+                    <span className="font-bold text-accent">
+                      <CountUp value={milestone.reward} format="currency" delayMs={300 + i * 200 + 400} />
+                    </span>
+                  </div>
+                  <span className="shine-sweep" style={{ animationDelay: `${300 + i * 200 + 600}ms` }} />
                 </div>
-                <div className="mt-auto flex items-center justify-between border-t border-border pt-3">
-                  <span className="text-xs text-muted">Reward</span>
-                  <span className="font-bold text-accent">
-                    <CountUp value={milestone.reward} format="currency" delayMs={300 + i * 200 + 400} />
-                  </span>
-                </div>
-                <span className="shine-sweep" style={{ animationDelay: `${300 + i * 200 + 600}ms` }} />
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Community CTA */}
       <section className="border-t border-border bg-surface/30">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <SectionHeading eyebrow="Community" title="Join the crew" description="Race alerts, bonus drops, and live streams." />
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="https://discord.com/invite/houseofdegens"
-              target="_blank"
-              rel="noreferrer"
-              className="flip-in-left flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent-2"
-              style={{ animationDelay: "300ms" }}
-            >
-              <MessageCircle size={16} className="text-accent-2" /> Discord
-            </a>
-            <a
-              href="https://kick.com/x4tar"
-              target="_blank"
-              rel="noreferrer"
-              className="flip-in-right flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent"
-              style={{ animationDelay: "450ms" }}
-            >
-              <Tv size={16} className="text-accent" /> Kick
-            </a>
-            <a
-              href="https://www.youtube.com/@xatargambles"
-              target="_blank"
-              rel="noreferrer"
-              className="flip-in-left flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-danger"
-              style={{ animationDelay: "600ms" }}
-            >
-              <YouTubeIcon size={16} className="text-danger" /> YouTube
-            </a>
-          </div>
+          <ScrollReveal>
+            <div className="anim-heading">
+              <SectionHeading
+                eyebrow="Community"
+                title="Join the crew"
+                description="Race alerts, bonus drops, and live streams."
+              />
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://discord.com/invite/houseofdegens"
+                target="_blank"
+                rel="noreferrer"
+                className="flip-in-left flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent-2"
+                style={{ animationDelay: "300ms" }}
+              >
+                <MessageCircle size={16} className="text-accent-2" /> Discord
+              </a>
+              <a
+                href="https://kick.com/pasut"
+                target="_blank"
+                rel="noreferrer"
+                className="flip-in-right flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent"
+                style={{ animationDelay: "450ms" }}
+              >
+                <Tv size={16} className="text-accent" /> Kick
+              </a>
+              <a
+                href="https://www.youtube.com/@xatargambles"
+                target="_blank"
+                rel="noreferrer"
+                className="flip-in-left flex items-center gap-2 rounded-md border border-border bg-surface-2 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-danger"
+                style={{ animationDelay: "600ms" }}
+              >
+                <YouTubeIcon size={16} className="text-danger" /> YouTube
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
